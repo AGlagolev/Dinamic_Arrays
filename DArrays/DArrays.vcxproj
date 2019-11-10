@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClInclude Include="Auxiliary.h" />
     <ClInclude Include="FillRand.h" />
+    <ClInclude Include="Copy.h" />
     <ClInclude Include="OddorEven.h" />
     <ClInclude Include="Print.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Auxiliary.cpp" />
+    <ClCompile Include="Copy.cpp" />
     <ClCompile Include="FillRand.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OddorEven.cpp" />

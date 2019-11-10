@@ -1,18 +1,16 @@
 #include <iostream>
 #include "FillRand.h"
-
+#include "Copy.h"
 #include "Print.h"
 #include "Print.cpp" 
 #include "OddorEven.h"
-
 #include "Auxiliary.h"
-
 
 using namespace std;
 ///**********************************************************************************************/
 ///**********************************************************************************************/
 #define INTx1
-//#define DINAMICARR
+
 /**********************************************************************************************/
 
 void main()
@@ -20,30 +18,33 @@ void main()
 	setlocale(LC_ALL, "Russian");
 	/////////////////////////
 #ifdef INTx1
-	G_INTx1:
-
-	std::cout << "Одномерный масив типа int на 10 элементов"<< std::endl;
-	//W_line();
+	G_INTx1:	
 
 	const int n = 10;
 	int ne = 0;
 	int no = 0;
 	int Arr[n];
-	FillRand(Arr, n);
-	OdEven(Arr, n, no, ne);
+
+	FillRand(Arr, n);	
+	std::cout << "Одномерный масив типа int на 10 элементов" << std::endl;
 	Print(Arr, n);
 	W_line();
 
-	std::cout << "масив even" << std::endl;	
+	OdEven(Arr, n, no, ne);
 	int* Earr = new int[ne];
+	int* Oarr = new int[no];
+	CopyAr(Arr, n, Earr, Oarr);
+
+	std::cout << "масив even" << std::endl;		
 	Print(Earr, ne);
 	W_line();
 
-	std::cout << "масив even" << std::endl;
-	int* Oarr = new int[no];
+	std::cout << "масив odd" << std::endl;	
 	Print(Oarr, no);
 	W_line();
 
+	delete[] Earr;
+	delete[] Oarr;
 
 	std::cout << " Для повтора Нажмите 1: ";
 	if (_getch() == '1')
@@ -55,37 +56,10 @@ void main()
 	system("cls");
 
 #endif // INTx1
-	///////////////////////////
-#ifdef DINAMICARR
-	Din_INTx1:
-
-	std::cout << "\t\tДинамический одномерный масив типа int";
-	W_line();
-	int num;
-	std::cout << " Введите размер массива: ";
-	std::cin >> num;
-	int* Darr = new int[num];
-	FillRand(Darr,num);
-	
-	for (int i = 0; i < num; i++)
-	{
-		std::cout << "\t Адрес = " << Darr + i << "| Значение = " << *(Darr + i) << std::endl;
-	}
-	delete[] Darr;
-	std::cout << " Для повтора Нажмите 1: ";
-	if (_getch() == '1')
-	{
-		system("cls");
-		goto Din_INTx1;
-	}
-
-	system("cls");
-
-#endif // DINAMICARR
 	
 
- /*End();
- Blink()*/;
+ End();
+ Blink();
 ////////////////////////
 }
 
