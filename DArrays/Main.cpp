@@ -16,6 +16,7 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "Russian");
+	system("color 0A");
 	/////////////////////////
 #ifdef INTx1
 	G_INTx1:	
