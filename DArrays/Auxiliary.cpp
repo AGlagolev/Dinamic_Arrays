@@ -5,7 +5,7 @@
 void W_line()
 {
 	std::cout << std::endl;
-	for (int zz = 1; zz <= 100; zz++)
+	for (int zz = 1; zz <= 70; zz++)
 	{
 		setlocale(LC_ALL, "C");
 		std::cout << char(220);

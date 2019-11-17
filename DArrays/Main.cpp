@@ -10,15 +10,15 @@
 using namespace std;
 ///**********************************************************************************************/
 ///**********************************************************************************************/
-#define INTx1
-
+//#define INTx1
+#define INTx1_ADD_ELEM
 /**********************************************************************************************/
 
 void main()
 {
 	setlocale(LC_ALL, "Russian");
 	system("color 0A");
-	Font(24);
+	Font(36);
 	/////////////////////////
 #ifdef INTx1
 	G_INTx1:	
@@ -33,10 +33,10 @@ void main()
 	Print(Arr, n);
 	W_line();
 
-	OdEven(Arr, n, no, ne);
+	
 	int* Earr = new int[ne];
 	int* Oarr = new int[no];
-	CopyAr(Arr, n, Earr, Oarr);
+	
 
 	std::cout << "масив odd" << std::endl;		
 	Print(Earr, ne);
@@ -60,11 +60,62 @@ void main()
 	system("cls");
 
 #endif // INTx1
+#ifdef INTx1_ADD_ELEM
+	G_INTx1_ADD :
+
+
+			int ne;
+
+			cout << "Введите число элементов массива: ";
+			cin >> ne;
+			int* Earr = new int[ne];
+			FillRand(Earr, ne);
+			Print(Earr, ne);
+
+			int value;
+			cout << "Введите значение добавляемого элемента: ";
+			cin >> value;
+
+			int nb = ne+1;
+
+			int* BuffArr = new int[nb];
+			for (int i = 0; i < ne; i++)
+			{
+				BuffArr[i] = Earr[i];
+			}
+			BuffArr[nb-1] = value;
+
+			std::cout << "масив Err" << std::endl;			
+			Print(Earr, ne);
+			W_line();
+
+			std::cout << "масив BuffArr" << std::endl;
+			Print(BuffArr, nb);
+			W_line();
+					   
+			delete[] Earr;	
+			Earr = BuffArr;
+
+			std::cout << "масив Err" << std::endl;
+			Print(Earr, nb);
+			W_line();
+
+			delete[] Earr;
+			//delete[] BuffArr;
+			std::cout << " Для повтора Нажмите 1: ";
+			if (_getch() == '1')
+			{				
+				system("cls");
+				goto G_INTx1_ADD;
+			}
+
+			system("cls");
+#endif // INTx1_ADD_ELEM
 
 
 
- End();
- Blink();
+ /*End();
+ Blink();*/
 ////////////////////////
 }
 
