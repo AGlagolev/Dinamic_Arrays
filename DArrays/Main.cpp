@@ -1,4 +1,5 @@
 #include <iostream>
+#include<time.h>
 #include "FillRand.h"
 #include "Copy.h"
 #include "Print.h"
@@ -17,6 +18,7 @@ void main()
 {
 	setlocale(LC_ALL, "Russian");
 	system("color 0A");
+	Font(24);
 	/////////////////////////
 #ifdef INTx1
 	G_INTx1:	
@@ -25,7 +27,7 @@ void main()
 	int ne = 0;
 	int no = 0;
 	int Arr[n];
-
+	srand(time(NULL)); //случайное начала ГСЧ
 	FillRand(Arr, n);	
 	std::cout << "Одномерный масив типа int на 10 элементов" << std::endl;
 	Print(Arr, n);
@@ -36,11 +38,11 @@ void main()
 	int* Oarr = new int[no];
 	CopyAr(Arr, n, Earr, Oarr);
 
-	std::cout << "масив even" << std::endl;		
+	std::cout << "масив odd" << std::endl;		
 	Print(Earr, ne);
 	W_line();
 
-	std::cout << "масив odd" << std::endl;	
+	std::cout << "масив even" << std::endl;	
 	Print(Oarr, no);
 	W_line();
 
@@ -50,6 +52,7 @@ void main()
 	std::cout << " Для повтора Нажмите 1: ";
 	if (_getch() == '1')
 	{
+	    //Sleep(1000);
 		system("cls");
 		goto G_INTx1;
 }
@@ -57,7 +60,8 @@ void main()
 	system("cls");
 
 #endif // INTx1
-	
+
+
 
  End();
  Blink();

@@ -5,7 +5,7 @@
 void W_line()
 {
 	std::cout << std::endl;
-	for (int zz = 1; zz <= 120; zz++)
+	for (int zz = 1; zz <= 100; zz++)
 	{
 		setlocale(LC_ALL, "C");
 		std::cout << char(220);
@@ -48,7 +48,25 @@ void End()
 	}
 	std::cout << char(219);
 }
+
+//Размер шрифта
+void Font(int a)
+{
+	CONSOLE_FONT_INFOEX cfi;
+	cfi.cbSize = sizeof(cfi);
+	cfi.nFont = 0;
+	cfi.dwFontSize.X = 0;                   // Width of each character in the font
+	cfi.dwFontSize.Y = a;                  // Height
+	cfi.FontFamily = FF_DONTCARE;
+	cfi.FontWeight = FW_NORMAL;	
+	wcscpy_s(cfi.FaceName/*, LF_FACESIZE*/, L"Cambria"); // Choose your font
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+
+
+}
 // Мигание текста
+
+
 void Blink()
 {
 	std::cout << std::endl;

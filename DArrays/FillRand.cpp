@@ -1,4 +1,5 @@
 #include "FillRand.h"
+
 //–≈¿À»«¿÷»ﬂ ‘”Õ ÷»» FillRand
 
 void FillRand(int Arr[], const int n)
