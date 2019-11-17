@@ -22,6 +22,7 @@
     <ClInclude Include="Auxiliary.h" />
     <ClInclude Include="FillRand.h" />
     <ClInclude Include="Copy.h" />
+    <ClInclude Include="Push_arr.h" />
     <ClInclude Include="OddorEven.h" />
     <ClInclude Include="Print.h" />
   </ItemGroup>
@@ -32,6 +33,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OddorEven.cpp" />
     <ClCompile Include="Print.cpp" />
+    <ClCompile Include="Push_arr.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

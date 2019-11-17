@@ -6,6 +6,8 @@
 #include "Print.cpp" 
 #include "OddorEven.h"
 #include "Auxiliary.h"
+#include "Push_arr.h"
+
 
 using namespace std;
 ///**********************************************************************************************/
@@ -20,6 +22,7 @@ void main()
 	system("color 0A");
 	Font(36);
 	/////////////////////////
+
 #ifdef INTx1
 	G_INTx1:	
 
@@ -75,33 +78,18 @@ void main()
 			int value;
 			cout << "Введите значение добавляемого элемента: ";
 			cin >> value;
-
-			int nb = ne+1;
-
-			int* BuffArr = new int[nb];
-			for (int i = 0; i < ne; i++)
-			{
-				BuffArr[i] = Earr[i];
-			}
-			BuffArr[nb-1] = value;
-
+			
 			std::cout << "масив Err" << std::endl;			
 			Print(Earr, ne);
 			W_line();
 
-			std::cout << "масив BuffArr" << std::endl;
-			Print(BuffArr, nb);
-			W_line();
-					   
-			delete[] Earr;	
-			Earr = BuffArr;
-
+			Earr = push(Earr, ne, value);
 			std::cout << "масив Err" << std::endl;
-			Print(Earr, nb);
+			Print(Earr, ne);
 			W_line();
 
 			delete[] Earr;
-			//delete[] BuffArr;
+			
 			std::cout << " Для повтора Нажмите 1: ";
 			if (_getch() == '1')
 			{				
@@ -114,8 +102,8 @@ void main()
 
 
 
- /*End();
- Blink();*/
+ End();
+ Blink();
 ////////////////////////
 }
 
